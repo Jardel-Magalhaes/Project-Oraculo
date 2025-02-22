@@ -2,6 +2,7 @@ package com.oraculo.app;
 
 import com.oraculo.app.util.AsciiArt;
 import com.oraculo.app.util.ConsoleUtil;
+import com.oraculo.app.controller.MenuController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,9 +15,23 @@ public class OraculoApp {
 
 		AsciiArt.logoOraculo();
 
-		ConsoleUtil.barraDeCarregamento(2000);
+		ConsoleUtil.carregamentoTexto(2000);
 
-		ConsoleUtil.carregamentoTexto();
+		ConsoleUtil.limparTela();
+
+		AsciiArt.logoMenu();
+
+		ConsoleUtil.mensagemBoasVindas();
+
+		ConsoleUtil.pressioneParaContinuar();
+
+		ConsoleUtil.limparTela();
+
+		AsciiArt.logoMenu();
+
+		MenuController.exibirMenu();
+
+
 
 	}
 }

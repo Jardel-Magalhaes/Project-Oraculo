@@ -1,7 +1,13 @@
 package com.oraculo.app.util;
 
 public class AsciiArt {
-    public static String logoOraculo() throws InterruptedException {
+
+    /**
+     * Exibe a logo do Oráculo com efeito de digitação.
+     *
+     * @throws InterruptedException caso a thread seja interrompida durante o efeito.
+     */
+    public static void logoOraculo() throws InterruptedException {
         ConsoleUtil.limparTela();
 
         String logo = "\n      ▒█████   ██▀███   ▄▄▄       ▄████▄   █    ██  ██▓     ▒█████  \n" +
@@ -16,10 +22,25 @@ public class AsciiArt {
                 "                                 ░                                  \n" +
                 "                                                       por: Jardel M \n";
 
-        ConsoleUtil.digitarTexto(logo, 3);
+        ConsoleUtil.digitarTexto(logo, 1);
+    }
 
+    /**
+     * Exibe a logo do Oráculo instantaneamente, sem efeito de digitação.
+     */
+    public static void logoMenu() {
+        ConsoleUtil.limparTela();
 
-        return logo;
+        System.out.println("\n      ▒█████   ██▀███   ▄▄▄       ▄████▄   █    ██  ██▓     ▒█████  \n" +
+                "     ▒██▒  ██▒▓██ ▒ ██▒▒████▄    ▒██▀ ▀█   ██  ▓██▒▓██▒    ▒██▒  ██▒\n" +
+                "     ▒██░  ██▒▓██ ░▄█ ▒▒██  ▀█▄  ▒▓█    ▄ ▓██  ▒██░▒██░    ▒██░  ██▒\n" +
+                "     ▒██   ██░▒██▀▀█▄  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓▓█  ░██░▒██░    ▒██   ██░\n" +
+                "     ░ ████▓▒░░██▓ ▒██▒ ▓█   ▓██▒▒ ▓███▀ ░▒▒█████▓ ░██████▒░ ████▓▒░\n" +
+                "     ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ░▒ ▒  ░░▒▓▒ ▒ ▒ ░ ▒░▓  ░░ ▒░▒░▒░ \n" +
+                "       ░ ▒ ▒░   ░▒ ░ ▒░  ▒   ▒▒ ░  ░  ▒   ░░▒░ ░ ░ ░ ░ ▒  ░  ░ ▒ ▒░ \n" +
+                "     ░ ░ ░ ▒    ░░   ░   ░   ▒   ░         ░░░ ░ ░   ░ ░   ░ ░ ░ ▒  \n" +
+                "         ░ ░     ░           ░  ░░ ░         ░         ░  ░    ░ ░  \n" +
+                "                                 ░                                  \n" +
+                "                                                                     \n");
     }
 }
-

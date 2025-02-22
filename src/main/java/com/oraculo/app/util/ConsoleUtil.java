@@ -1,5 +1,7 @@
 package com.oraculo.app.util;
 
+import java.util.Scanner;
+
 public class ConsoleUtil {
 
     /**
@@ -41,7 +43,7 @@ public class ConsoleUtil {
      * @param duracao Tempo total da animação em milissegundos.
      * @throws InterruptedException Se a thread for interrompida durante a execução.
      */
-    public static void barraDeCarregamento(int duracao) throws InterruptedException {
+    public static void carregamentoTexto(int duracao) throws InterruptedException {
         String base = "                         Iniciando aplicação";
         ;
         int ciclos = duracao / 500;
@@ -65,13 +67,39 @@ public class ConsoleUtil {
      *
      * @throws InterruptedException se a thread for interrompida durante a execução
      */
-    public static void carregamentoTexto() throws InterruptedException {
+    public static void carregamentoNumeros() throws InterruptedException {
         for (int i = 0; i <= 100; i++) {
             System.out.print("\r                                   " + i + "%");
             Thread.sleep(20);
         }
         System.out.println("\r" + " ".repeat(68));
         System.out.flush();
-
     }
-}
+        /**
+         * Exibe uma mensagem de boas-vindas com efeito de digitação.
+         */
+        public static void mensagemBoasVindas() throws InterruptedException {
+            String mensagem = "\n                    Bem-vindo ao Projeto Oráculo                    ";
+            String instrucoes = "\n       Pressione qualquer tecla para exibir o menu de funções       ";
+
+
+            try {
+                digitarTexto(mensagem, 3); // Exibe com efeito de digitação
+
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt(); // Mantém o status de interrupção da thread
+                System.out.println("\nA execução foi interrompida.");
+            }
+            System.out.println(instrucoes);
+        }
+
+        /**
+         * Aguarda o usuário pressionar qualquer tecla antes de continuar.
+         */
+        public static void pressioneParaContinuar() {
+            Scanner scanner = new Scanner(System.in);
+            scanner.nextLine(); // Aguarda o usuário pressionar Enter
+        }
+    }
+
+
