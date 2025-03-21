@@ -29,7 +29,6 @@ public class AsciiArt {
      * Exibe a logo do Oráculo instantaneamente, sem efeito de digitação.
      */
     public static void logoMenu() {
-        ConsoleUtil.limparTela();
 
         System.out.println("\n      ▒█████   ██▀███   ▄▄▄       ▄████▄   █    ██  ██▓     ▒█████  \n" +
                 "     ▒██▒  ██▒▓██ ▒ ██▒▒████▄    ▒██▀ ▀█   ██  ▓██▒▓██▒    ▒██▒  ██▒\n" +

@@ -3,6 +3,7 @@ package com.oraculo.app.view;
 import com.oraculo.app.controller.BlocoDeNotasController;
 import com.oraculo.app.model.Nota;
 import com.oraculo.app.util.AsciiArt;
+import com.oraculo.app.util.ConsoleUtil;
 
 import java.util.List;
 import java.util.Scanner;
@@ -22,6 +23,7 @@ public class BlocoDeNotasView {
     public void exibirMenuNotas() {
         while (true) {
 
+            AsciiArt.logoMenu();
             System.out.println("---BLOCO DE NOTAS---");
             System.out.println("1. Adicionar Nota");
             System.out.println("2. Listar Notas");
@@ -34,15 +36,18 @@ public class BlocoDeNotasView {
 
             switch (escolha) {
                 case 1:
+                    ConsoleUtil.limparTela();
                     adicionarNota();
                     break;
                 case 2:
+                    ConsoleUtil.limparTela();
                     listarNotas();
                     break;
                 case 3:
                     removerNota();
                     break;
                 case 4:
+                    ConsoleUtil.limparTela();
                     System.out.println("Saindo...");
                     return;
                 default:
@@ -52,12 +57,14 @@ public class BlocoDeNotasView {
     }
 
     private void adicionarNota() {
+        System.out.println("-------------------------");
         System.out.print("Título: ");
         String titulo = scanner.nextLine();
         System.out.print("Conteúdo: ");
         String conteudo = scanner.nextLine();
         controller.adicionarNota(titulo, conteudo);
         System.out.println("Nota adicionada com sucesso!");
+        System.out.println("-------------------------");
     }
 
     private void listarNotas() {
@@ -66,6 +73,7 @@ public class BlocoDeNotasView {
             System.out.println("Nenhuma nota disponível.");
         } else {
             for (Nota nota : notas) {
+                System.out.println("-------------------------");
                 System.out.println(nota);
                 System.out.println("-------------------------");
             }
@@ -78,7 +86,11 @@ public class BlocoDeNotasView {
         try {
             int id = Integer.parseInt(scanner.nextLine()); // Converte entrada para inteiro
 
+
             if (controller.removerNota(id)) {
+
+                System.out.println("Presione ENTER para confirmar a remoção.");
+                ConsoleUtil.pressioneParaContinuar();
                 System.out.println("Nota removida com sucesso!");
             } else {
                 System.out.println("Nota não encontrada.");

@@ -80,7 +80,7 @@ public class ConsoleUtil {
          */
         public static void mensagemBoasVindas() throws InterruptedException {
             String mensagem = "\n                    Bem-vindo ao Projeto Oráculo                    ";
-            String instrucoes = "\n       Pressione qualquer tecla para exibir o menu de funções       ";
+            String instrucoes = "\n       Pressione a tecla ENTER para exibir o menu de funções       ";
 
 
             try {

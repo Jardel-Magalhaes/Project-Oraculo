@@ -1,1 +1,10 @@
+com\oraculo\app\controller\OraculoController.class
+com\oraculo\app\controller\BlocoDeNotasController.class
+com\oraculo\app\controller\MenuController.class
+com\oraculo\app\model\Nota.class
+com\oraculo\app\model\Mensagem.class
+com\oraculo\app\OraculoApp.class
+com\oraculo\app\service\OraculoService.class
 com\oraculo\app\view\BlocoDeNotasView.class
+com\oraculo\app\util\AsciiArt.class
+com\oraculo\app\util\ConsoleUtil.class
